@@ -1,0 +1,52 @@
+.main {
+    text-align: center;
+
+    .container {
+        height: 600px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        max-width: 400px;
+        font-size: 48px;
+
+        &.slim {
+            max-width: 350px;
+        }
+    }
+    p {
+        max-width: 280px;
+        font-size: 18px;
+        margin: 20px 0 30px;
+    }
+
+    @include tablet {
+        h1 {
+            font-size: 42px;
+            &.slim {
+                max-width: 320px;
+            }
+        }
+        p {
+            font-size: 16px;
+            max-width: 250px;
+        }
+    }
+    @include mobile {
+        h1 {
+            font-size: 36px;
+            max-width: 220px;
+            &.slim {
+                max-width: 280px;
+            }
+        }
+        p {
+            font-size: 14px;
+            max-width: 220px;
+        }
+    }
+}
