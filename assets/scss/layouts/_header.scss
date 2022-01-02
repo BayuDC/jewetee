@@ -1,0 +1,141 @@
+.header {
+    .container {
+        max-width: 1200px;
+        height: 80px;
+        margin: auto;
+        padding: 0 60px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        @include mobile {
+            padding: 0 20px;
+        }
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .menu {
+        &-auth {
+            .btn {
+                margin-left: 20px;
+            }
+        }
+        &-user {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .img {
+                width: 36px;
+                height: 36px;
+                margin-left: 20px;
+                border-radius: 50%;
+                overflow: hidden;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        &-toggle {
+            display: none;
+            height: 36px;
+            span {
+                font-size: 36px;
+            }
+        }
+        &-card {
+            width: 320px;
+            box-sizing: border-box;
+            border: 2px solid $green;
+            position: absolute;
+            padding: 18px;
+
+            right: 0;
+            bottom: 0;
+            transform: translate(-60px, 100%);
+
+            display: none;
+            &.active {
+                display: block;
+            }
+
+            .info {
+                display: grid;
+                grid-template-areas: 'img name' 'img email';
+                grid-template-columns: 60px auto;
+                margin-bottom: 20px;
+                .img {
+                    grid-area: img;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .name {
+                    grid-area: name;
+                    align-self: end;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .email {
+                    grid-area: email;
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .action {
+                height: 36px;
+                display: flex;
+                justify-content: right;
+            }
+        }
+        @include mobile {
+            &-auth {
+                width: calc(100% - 40px);
+                box-sizing: border-box;
+                border: 2px solid $green;
+                position: absolute;
+                padding: 18px;
+                right: 0;
+                bottom: 0;
+                transform: translate(-20px, 100%);
+                text-align: center;
+                display: none;
+                flex-direction: column-reverse;
+
+                &.active {
+                    display: flex;
+                }
+
+                .btn {
+                    margin: 0;
+                }
+                .link {
+                    margin-top: 10px;
+                    align-self: center;
+                }
+            }
+            &-user {
+                display: none;
+            }
+            &-toggle {
+                display: inherit;
+            }
+            &-card {
+                width: calc(100% - 40px);
+                transform: translate(-20px, 100%);
+            }
+        }
+    }
+}

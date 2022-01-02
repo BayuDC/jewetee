@@ -16,7 +16,8 @@ if (process.env.NODE_ENV != 'production') {
     require('./utils/dev-mw')(app);
 }
 
-app.get('/', (req, res) => res.render('index'));
+app.use(require('./routes/main'));
+app.use((req, res) => res.sendStatus(404));
 
 mongoose.connect(mongouri).then(() => {
     app.listen(port, () => {
