@@ -1,0 +1,54 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin: 80px 0;
+
+    @include mobile {
+        margin: 0;
+    }
+
+    form {
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid $green;
+        box-sizing: border-box;
+        padding: 20px;
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .input-area {
+            margin: 50px 0 100px;
+
+            input {
+                width: 100%;
+                display: block;
+                border-bottom: 2px solid $green;
+                padding: 5px 0;
+            }
+
+            .error {
+                text-align: right;
+                font-size: 12px;
+                margin: 5px 0 20px;
+                color: $pink;
+                height: 14px;
+            }
+        }
+
+        .shortcut {
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            display: block;
+            width: 100%;
+            border: none;
+            margin-top: 20px;
+        }
+    }
+}

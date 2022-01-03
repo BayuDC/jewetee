@@ -17,6 +17,7 @@ if (process.env.NODE_ENV != 'production') {
 }
 
 app.use(require('./routes/main'));
+app.use(require('./routes/auth'));
 app.use((req, res) => res.sendStatus(404));
 
 mongoose.connect(mongouri).then(() => {

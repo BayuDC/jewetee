@@ -19,6 +19,22 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  border: none;
+}
+
+input {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #0b4619;
+}
+
 .btn {
   background: #0b4619;
   color: #fff1bd;
@@ -41,6 +57,9 @@ a {
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+.header .container.center {
+  justify-content: center;
 }
 @media screen and (max-width: 600px) {
   .header .container {
@@ -210,8 +229,61 @@ a {
   }
 }
 
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin: 80px 0;
+}
+@media screen and (max-width: 600px) {
+  .auth {
+    margin: 0;
+  }
+}
+.auth form {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #0b4619;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.auth form h2 {
+  font-size: 24px;
+}
+.auth form .input-area {
+  margin: 50px 0 100px;
+}
+.auth form .input-area input {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #0b4619;
+  padding: 5px 0;
+}
+.auth form .input-area .error {
+  text-align: right;
+  font-size: 12px;
+  margin: 5px 0 20px;
+  color: #ff5d6c;
+  height: 14px;
+}
+.auth form .shortcut {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+.auth form button {
+  display: block;
+  width: 100%;
+  border: none;
+  margin-top: 20px;
+}
+
 .footer {
   padding: 20px 0;
   margin-top: auto;
   text-align: center;
+}
+.footer p {
+  line-height: 20px;
 }
