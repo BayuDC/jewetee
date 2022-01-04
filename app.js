@@ -9,6 +9,7 @@ const mongouri = process.env.MONGO;
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/main');
 
+app.use(express.json());
 app.use(express.static('./public'));
 app.use(expressLayouts);
 
