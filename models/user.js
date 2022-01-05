@@ -29,10 +29,15 @@ userSchema.pre('save', async function (next) {
 });
 
 userSchema.statics.login = async function (email, password) {
-    const user = await this.findOne({ email });
-    const auth = await bcrypt.compare(password, user.password);
+    if (!isEmail(email)) throw { email: 'Email is not valid!' };
 
-    if (auth) return user;
+    const user = await this.findOne({ email });
+    if (!user) throw { email: 'Email is not registered!' };
+
+    const auth = await bcrypt.compare(password, user.password);
+    if (!auth) throw { password: 'Incorrect password!' };
+
+    return user;
 };
 
 module.exports = mongoose.model('User', userSchema);
