@@ -43,4 +43,8 @@ module.exports = {
             res.status(400).json({ err });
         }
     },
+    logout(req, res) {
+        res.cookie('token', '', { maxAge: 0 });
+        res.redirect('/');
+    },
 };

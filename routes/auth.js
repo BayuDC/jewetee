@@ -7,5 +7,6 @@ router.get('/signup', (req, res) => res.render('auth/signup', { layout: 'layouts
 
 router.post('/login', auth.login);
 router.post('/signup', auth.signup);
+router.get('/logout', auth.logout);
 
 module.exports = router;
