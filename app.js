@@ -1,5 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -12,6 +13,7 @@ app.set('layout', 'layouts/main');
 app.use(express.json());
 app.use(express.static('./public'));
 app.use(expressLayouts);
+app.use(cookieParser());
 
 if (process.env.NODE_ENV != 'production') {
     require('./utils/dev-mw')(app);
