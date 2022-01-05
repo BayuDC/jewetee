@@ -28,4 +28,11 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
+userSchema.statics.login = async function (email, password) {
+    const user = await this.findOne({ email });
+    const auth = await bcrypt.compare(password, user.password);
+
+    if (auth) return user;
+};
+
 module.exports = mongoose.model('User', userSchema);
