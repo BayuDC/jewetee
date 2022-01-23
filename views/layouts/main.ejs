@@ -19,12 +19,9 @@
             <div class="logo">
                 <a href="/">Jewetee</a>
             </div>
-            <div class="menu-auth">
-                <a href="/login" class="link">Log in</a>
-                <a href="/signup" class="btn">Sign up</a>
-            </div>
-            <!-- <div class="menu-user">
-                <div>Some Random Name</div>
+            <% if (user) { %>
+            <div class="menu-user">
+                <div><%= user.name %> </div>
                 <div class="img">
                     <img src="/img/pp.png" alt="profile picture">
                 </div>
@@ -34,13 +31,19 @@
                     <div class="img">
                         <img src="/img/pp.png" alt="profile picture">
                     </div>
-                    <div class="name">Some Random Name</div>
-                    <div class="email">randomemail@host.domain</div>
+                    <div class="name"><%= user.name %> </div>
+                    <div class="email"><%= user.email %> </div>
                 </div>
                 <div class="action">
-                    <a href="#" class="btn">Log out</a>
+                    <a href="/logout" class="btn">Log out</a>
                 </div>
-            </div> -->
+            </div>
+            <% } else { %>
+            <div class="menu-auth">
+                <a href="/login" class="link">Log in</a>
+                <a href="/signup" class="btn">Sign up</a>
+            </div>
+            <% } %>
             <div class="menu-toggle">
                 <span class="material-icons">
                     menu

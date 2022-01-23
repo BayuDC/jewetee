@@ -16,7 +16,7 @@ app.use(expressLayouts);
 app.use(cookieParser());
 
 if (process.env.NODE_ENV != 'production') {
-    require('./utils/dev-mw')(app);
+    require('./utils/mw-dev')(app);
 }
 
 app.use(require('./routes/main'));
