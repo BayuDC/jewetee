@@ -4,16 +4,15 @@
   "description": "A simple web that implements jwt authentication",
   "main": "app.js",
   "scripts": {
-    "start": "node -r dotenv/config app",
+    "dev": "node -r dotenv/config app",
+    "start": "node app",
     "build": "webpack"
   },
   "author": "BayuDC",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "cash-dom": "^8.1.0",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "express-ejs-layouts": "^2.5.1",
@@ -22,6 +21,8 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "cash-dom": "^8.1.1",
+    "dotenv": "^16.0.0",
     "file-loader": "^6.2.0",
     "morgan": "^1.10.0",
     "sass": "^1.45.2",
